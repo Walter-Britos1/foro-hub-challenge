@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/cursos")
 @SecurityRequirement(name = "bearer-key")
-@Tag(name = "Course", description = "Puede formar parte de diversas categorías designadas")
+@Tag(name = "Cursos", description = "Puede formar parte de diversas categorías designadas")
 public class CourseController {
     @Autowired
     private CourseRepository courseRepository;
@@ -34,7 +34,7 @@ public class CourseController {
         Course course = new Course(createCourseDTO);
         courseRepository.save(course);
 
-        var uri = uriComponentsBuilder.path("/courses/{i}").buildAndExpand(course.getId()).toUri();
+        var uri = uriComponentsBuilder.path("/cursos/{i}").buildAndExpand(course.getId()).toUri();
 
         return ResponseEntity.created(uri).body(new DetailsCourseDTO(course));
     }

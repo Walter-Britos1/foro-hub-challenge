@@ -28,7 +28,8 @@ public record DetailsResponseDTO(
                 response.getUser().getId(),
                 response.getUser().getUsername(),
                 response.getTopic().getId(),
-                response.getTopic().getTitle());
-        )
+                response.getTopic().getTitle()
+        );
+
     }
 }

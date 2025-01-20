@@ -27,6 +27,6 @@ public record DetailsTipocDTO(
                 topic.getStatus(),
                 topic.getUser().getUsername(),
                 topic.getCourse().getName(),
-                topic.getCourse().getCategory()
+                topic.getCourse().getCategory());
     }
 }
